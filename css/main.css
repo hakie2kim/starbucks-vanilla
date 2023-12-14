@@ -18,7 +18,8 @@ a {
 
 /* HEADER */
 header {
-  background-color: royalblue;
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
 }
 
 header .inner {
@@ -26,7 +27,6 @@ header .inner {
   height: 120px;
   margin: 0 auto;
   padding: 0;
-  background-color: orange;
   /* 로고의 수직 가운데 정렬 */
   /* display: flex;
   align-items: center; */
@@ -36,7 +36,6 @@ header .inner {
 header .inner .logo {
   /* 로고의 수직 가운데 정렬 */
   height: 75px; /* 높이 지정해주어야 가운데 정렬됨 */
-  background-color: yellow;
   position: absolute; /* 부모 요소가 relative */
   top: 0;
   bottom: 0;
@@ -45,6 +44,10 @@ header .inner .logo {
 }
 
 header .sub-menu {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 0;
 }
 
 header .sub-menu ul.menu {
@@ -84,10 +87,39 @@ header .sub-menu ul.menu li a:hover {
 }
 
 header .sub-menu .search {
-}
-
-header .sub-menu .search .material-icons {
+  height: 34px;
+  position: relative;
 }
 
 header .sub-menu .search input {
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none; /* content - border - 요소의 내용에 포함돼 있지 않은 outline */
+  background-color: #fff;
+  color: #777;
+  font-size: 12px;
+}
+
+header .sub-menu .search input:focus {
+  width: 190px;
+  border-color: #669900;
+  transition: width 0.4s;
+}
+
+header .sub-menu .search .material-icons {
+  height: 24px; /* material-icons의 font 크기 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto 0;
+  transition: 0.4s; /* focus, blur 둘 다 적용됨 */
+}
+
+header .sub-menu .search.focused .material-icons {
+  opacity: 0;
 }
