@@ -16,21 +16,23 @@ a {
   text-decoration: none;
 }
 
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
 /* HEADER */
 header {
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
 }
 
-header .inner {
-  width: 1100px;
+header > .inner {
   height: 120px;
-  margin: 0 auto;
-  padding: 0;
   /* 로고의 수직 가운데 정렬 */
   /* display: flex;
   align-items: center; */
-  position: relative;
 }
 
 header .inner .logo {
@@ -122,4 +124,49 @@ header .sub-menu .search .material-icons {
 
 header .sub-menu .search.focused .material-icons {
   opacity: 0;
+}
+
+header .main-menu {
+  position: absolute; /* div.inner의 position: relative; */
+  bottom: 0;
+  right: 0;
+  z-index: 1; /* 사이드 배너보다 위로 오도록 */
+  display: flex;
+}
+
+header .main-menu .item {
+}
+
+header .main-menu .item .item__name {
+  padding: 10px 20px 34px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+header .main-menu .item:hover .item__name {
+  background-color: #2c2a29;
+  color: #669900;
+  border-radius: 6px 6px 0 0;
+}
+
+header .main-menu .item .item__contents {
+  width: 100%;
+  position: fixed; /* 뷰포트를 기준으로 배치, absolute이면 부모 (header .sub-menu ul.menu li) 기준이기 때문에 너비를 화면 전체로 할 수 없음 */
+  /* top, bottom 값 없다면 요소의 원래 위치 사용 */
+  left: 0;
+  display: none; /* hover 할 때만 display가 block이 됨 */
+}
+
+header .main-menu .item:hover .item__contents {
+  display: block;
+}
+
+header .main-menu .item .item__contents .contents__menu {
+  background-color: red;
+  height: 200px;
+}
+
+header .main-menu .item .item__contents .contents__texture {
+  background-color: orange;
+  height: 100px;
 }
