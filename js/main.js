@@ -24,4 +24,4 @@ window.addEventListener(
   _.throttle(function () {
     console.log("scroll!");
   }, 300)
-); // lodash js 라이브러리 사용
+); // lodash js 라이브러리 사용, _.throttle(함수, 시간)
