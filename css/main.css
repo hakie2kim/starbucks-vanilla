@@ -5,6 +5,7 @@ body {
   font-weight: 400;
   line-height: 1.4;
   font-family: "Nanum Gothic", sans-serif;
+  height: 3000px; /* 스크롤 생김 */
 }
 
 /* img는 인라인 요소이기 때문에 baseline이 생김 -> 아래에 여백 생김 */
@@ -24,8 +25,12 @@ a {
 
 /* HEADER */
 header {
+  /* position: relative; position: absolute인 자식: badges */
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  width: 100%; /* auto이면 너비 최소한으로 사용하려고 함 */
+  position: fixed; /* position: absolute인 자식: badges */
+  top: 0;
 }
 
 header > .inner {
@@ -210,4 +215,18 @@ header .main-menu .item .item__contents .contents__texture h4 {
 header .main-menu .item .item__contents .contents__texture p {
   color: #669900;
   margin: 4px 0 14px; /* 상 좌우 하 */
+}
+
+header .badges {
+  position: absolute; /* position: relative;인 부모 요소: .header */
+  top: 132px;
+  right: 12px;
+}
+
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden; /* overflow: visible인 경우 모서리 둥글게 반영 안됨 */
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15); /* 수평, 수직, 흐림 정도 */
+  cursor: pointer;
 }

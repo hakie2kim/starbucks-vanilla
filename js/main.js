@@ -17,3 +17,11 @@ searchInputElement.addEventListener("blur", function () {
   searchElement.classList.remove("focused");
   searchInputElement.setAttribute("placeholder", "");
 });
+
+const badgeElement = document.querySelector("header .badges");
+window.addEventListener(
+  "scroll",
+  _.throttle(function () {
+    console.log("scroll!");
+  }, 300)
+); // lodash js 라이브러리 사용

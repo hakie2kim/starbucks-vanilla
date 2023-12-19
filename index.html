@@ -48,6 +48,12 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <link rel="stylesheet" href="./css/main.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script defer src="./js/main.js"></script>
   </head>
   <body>
@@ -84,6 +90,17 @@
             <li class="item">
               <!-- 그냥 COFFEE라는 글자를 넣었을 때와 달리 div에 넣게 되면 가운데로 몰아주는 역할을 함 -->
               <!-- <div class="inner">COFFEE</div> -->
+              <!-- BEM: 요소__일부분 -->
+              <!-- <div class="container">
+                <div class="container__name"></div>
+                <div class="item">
+                  <div class="item__name"></div>
+                </div>
+              </div> -->
+              <!-- BEM: 요소--상태 -->
+              <!-- <div class="btn btn--primary"></div>
+              <div class="btn btn--success"></div>
+              <div class="btn btn--error"></div> -->
               <div class="item__name">COFFEE</div>
               <div class="item__contents">
                 <div class="contents__menu">
@@ -389,6 +406,14 @@
               </div>
             </li>
           </ul>
+        </div>
+      </div>
+      <div class="badges">
+        <div class="badge">
+          <img src="./images/badge1.jpg" alt="Badge" />
+        </div>
+        <div class="badge">
+          <img src="./images/badge2.jpg" alt="Badge" />
         </div>
       </div>
     </header>
