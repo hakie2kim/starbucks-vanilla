@@ -22,6 +22,22 @@ const badgeElement = document.querySelector("header .badges");
 window.addEventListener(
   "scroll",
   _.throttle(function () {
-    console.log("scroll!");
+    console.log(window.scrollY); // 화면 위에서 몇 픽셀 지점에 위치해 있는지 알려줌
+    if (window.scrollY > 500) {
+      // 배지 숨기기
+      // badgeElement.style.display = "none";
+      // 부자연스러워서 gsap 라이브러리 사용 gsap.to(요소, 지속시간(초), 옵션)
+      gsap.to(badgeElement, 0.6, {
+        opacity: 0,
+        display: "none", // <-> visibility: "hidden" 영역 차지 O
+      });
+    } else {
+      // 배지 보이기
+      //  badgeElement.style.display = "block";
+      gsap.to(badgeElement, 0.6, {
+        opacity: 1,
+        display: "block",
+      });
+    }
   }, 300)
-); // lodash js 라이브러리 사용, _.throttle(함수, 시간)
+); // lodash 라이브러리 사용, _.throttle(함수, 시간)
