@@ -230,3 +230,39 @@ header .badges .badge {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15); /* 수평, 수직, 흐림 정도 */
   cursor: pointer;
 }
+
+/* VISUAL */
+.visual {
+  /* header의 높이 */
+  margin-top: 120px;
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+}
+
+/* COMMON의 .inner도 같이 적용 */
+.visual .inner {
+  height: 646px;
+  background-color: orange;
+}
+
+/* inner 안 title 클래스는 유일 -> .inner 생략 */
+.visual .title {
+}
+
+.visual .title .btn {
+}
+
+.visual .cup1 .image {
+}
+
+.visual .cup1 .text {
+}
+
+.visual .cup2 .image {
+}
+
+.visual .cup2 .text {
+}
+
+.visual .spoon {
+}
