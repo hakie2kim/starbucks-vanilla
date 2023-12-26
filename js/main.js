@@ -41,3 +41,12 @@ window.addEventListener(
     }
   }, 300)
 ); // lodash 라이브러리 사용, _.throttle(함수, 시간)
+
+const fadeElements = document.querySelectorAll(".visual .fade-in");
+fadeElements.forEach(function (fadeElement, index) {
+  // gsap.to(요소, 지속시간(초), 옵션)
+  gsap.to(fadeElement, 1, {
+    delay: (index + 1) * 0.7, // 지연 시간 각각 0.7, 1.4, 2.1
+    opacity: 1,
+  });
+});
