@@ -403,8 +403,20 @@ header .badges .badge {
 }
 
 .notice .notice-line .inner__left .swiper-container {
-  background-color: orange; /* align-content의 기본값이 stretch, flex-items의 높이 정해지지 않은 경우 최대한 늘려짐 */
-  flex-grow: 1; /* 너비가 명시돼 있지 않고, 부모가 display: flex;이기 때문에 추가 */
+  height: 62px;
+  /* align-content의 기본값이 stretch, flex-items의 높이 정해지지 않은 경우 (높이가) 최대한 늘려짐 */
+  /* 너비가 명시돼 있지 않고, 부모가 display: flex;이기 때문에 추가 */
+  flex-grow: 1;
+}
+
+.notice .notice-line .inner__left .swiper-slide {
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+
+.notice .notice-line .inner__left .swiper-slide a {
+  color: #fff;
 }
 
 .notice .notice-line .inner__left .notice-line__more {
