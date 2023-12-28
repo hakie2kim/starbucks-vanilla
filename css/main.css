@@ -458,3 +458,28 @@ header .badges .badge {
 .notice .notice-line .inner__right .toggle-promotion .material-icons {
   font-size: 30px;
 }
+
+.notice .promotion {
+  height: 693px;
+  background-color: #f6f5ef;
+  position: relative;
+}
+
+.notice .promotion .swiper-container {
+  width: calc(
+    819px * 3 + 20px
+  ); /* 자동으로 너비를 계산해주는 기능 예) calc(100% - 50px); */
+  height: 553px;
+  background-color: orange;
+  text-align: center;
+  font-size: 200px;
+  position: absolute;
+  top: 40px;
+  /* 
+  아래 두 요소는 브라우저를 확대해도 항상 가운데에 배치하기 위함 
+  1. 왼쪽에서 절반 지점에 위치
+  2. 요소의 절반만큼 다시 왼쪽으로 배치
+  */
+  left: 50%;
+  margin-left: calc((819px * 3 + 20px) * -1 / 2);
+}
