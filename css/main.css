@@ -463,6 +463,13 @@ header .badges .badge {
   height: 693px;
   background-color: #f6f5ef;
   position: relative;
+  transition: height 0.4s;
+  overflow: hidden;
+}
+
+.notice .promotion.hide {
+  height: 0;
+  overflow: hidden; /* .promotion 안 요소들이 가려지지 않음 */
 }
 
 .notice .promotion .swiper-container {

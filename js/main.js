@@ -76,3 +76,15 @@ new Swiper(".promotion .swiper-container", {
     nextEl: ".promotion .swiper-next",
   },
 });
+
+const promotionElement = document.querySelector(".promotion");
+const promotionToggleButton = document.querySelector(".toggle-promotion");
+
+let isHidingPromotion = false;
+promotionToggleButton.addEventListener("click", function () {
+  isHidingPromotion = !isHidingPromotion;
+  // promotion 요소에 hide라는 클래스 이름을 추가 삭제함으로써 숨김 처리할지 결정
+  isHidingPromotion
+    ? promotionElement.classList.add("hide")
+    : promotionElement.classList.remove("hide");
+});
