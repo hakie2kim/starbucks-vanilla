@@ -569,3 +569,56 @@ header .badges .badge {
   background-color: #333;
   color: #fff;
 }
+
+/* REWARDS */
+.rewards {
+  position: relative;
+}
+
+.rewards .bg-left {
+  width: 50%;
+  height: 100%;
+  background-color: #272727;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.rewards .bg-right {
+  width: 50%;
+  height: 100%;
+  background-color: #d5c798;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.rewards .inner {
+  background-image: url("../images/rewards.jpg");
+  height: 241px;
+}
+
+.rewards .btn-group {
+  position: absolute; /* inner의 position이 relative인 경우 자주 사용됨 */
+  bottom: 24px;
+  right: 0;
+
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rewards .btn-group .btn.sign-up {
+  margin-right: 10px;
+}
+
+.rewards .btn-group .btn.sign-in {
+  width: 110px; /*  버튼 두 개의 width = 130*2 = 260px -> 한 줄에 위치 불가 -> width를 110px로 변경 */
+}
+
+.rewards .btn-group .btn.gift {
+  margin-top: 10px;
+  flex-grow: 1; /* 최대한의 너비를 사용 */
+}
