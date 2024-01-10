@@ -88,3 +88,25 @@ promotionToggleButton.addEventListener("click", function () {
     ? promotionElement.classList.add("hide")
     : promotionElement.classList.remove("hide");
 });
+
+// 범위 랜덤 함수(소수점 2자리까지)
+function random(min, max) {
+  // `.toFixed()`를 통해 반환된 문자 데이터를,
+  // `parseFloat()`을 통해 소수점을 가지는 숫자 데이터로 변환
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+}
+
+function floatingObject(selector, delay, size) {
+  // gsap.to(요소, 시간, 옵션);
+  gsap.to(selector, random(1.5, 2.5), {
+    y: size,
+    repeat: -1, // 무한 반복
+    yoyo: true,
+    ease: Power1.easeInOut, // https://gsap.com/docs/v3/Eases/ https://gsap.com/docs/v3/GSAP/gsap.to()/
+    delay: random(0, delay),
+  });
+}
+
+floatingObject(".floating", 1, 15);
+floatingObject(".floating", 0.5, 15);
+floatingObject(".floating", 1.5, 20);
