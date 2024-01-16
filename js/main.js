@@ -117,6 +117,6 @@ spyEls.forEach(function (spyEl) {
     triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
     triggerHook: 0.8, // 화면 상단이 0, 하단이 1
   }) // 특정한 요소를 감지하는 옵션
-    .setClassToggle() // 특정 클래스를 토글
-    .addTo(); // controller 추가
+    .setClassToggle(spyEl, "show") // 특정 클래스를 넣고 빼기
+    .addTo(new ScrollMagic.Controller()); // controller 추가
 });
