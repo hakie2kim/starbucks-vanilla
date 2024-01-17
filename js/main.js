@@ -120,3 +120,7 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, "show") // 특정 클래스를 넣고 빼기
     .addTo(new ScrollMagic.Controller()); // controller 추가
 });
+
+// 연도 삽입
+const thisYear = document.querySelector(".this-year");
+thisYear.textContent = new Date().getFullYear();
