@@ -19,6 +19,8 @@ searchInputElement.addEventListener("blur", function () {
 });
 
 const badgeElement = document.querySelector("header .badges");
+const toTopEl = document.querySelector("#to-top");
+
 window.addEventListener(
   "scroll",
   _.throttle(function () {
@@ -31,6 +33,11 @@ window.addEventListener(
         opacity: 0,
         display: "none", // <-> visibility: "hidden" 영역 차지 O
       });
+
+      // 버튼 보이기
+      gsap.to(toTopEl, 0.2, {
+        x: 0, // 원래 자리로 이동
+      });
     } else {
       // 배지 보이기
       //  badgeElement.style.display = "block";
@@ -38,9 +45,20 @@ window.addEventListener(
         opacity: 1,
         display: "block",
       });
+
+      // 버튼 숨기기
+      gsap.to(toTopEl, 0.2, {
+        x: 100, // 오른쪽으로 100px 이동해 숨기기
+      });
     }
   }, 300)
 ); // lodash 라이브러리 사용, _.throttle(함수, 시간)
+
+toTopEl.addEventListener("click", function () {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  });
+}); // function() {} 이벤트 핸들러
 
 const fadeElements = document.querySelectorAll(".visual .fade-in");
 fadeElements.forEach(function (fadeElement, index) {
